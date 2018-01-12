@@ -19,45 +19,6 @@
    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
-    <!--CB-modal -->
-    <!-- Button trigger modal -->
-    <!-- Button trigger modal -->
-   
-
-    <!-- Modal -->
-    
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-       
-        <div class="modal-dialog" role="document">
-            <div class="modal-content modaldark">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span style="color:white;" aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form class="form-inline" action="http://localhost:3000/customers" method="post">
-                        <div class="col-md-4 form-group">
-                            <ul class="input-list style-4 clearfix">
-                            <input type="text" class="form-control darkinput" name="firstname" placeholder="First Name">
-                            <input type="text" class="form-control darkinput" name="lastname" placeholder="Last Name">
-                            <input type="text" class="form-control darkinput" name="Gender" placeholder="Gender">
-                            <input type="text" class="form-control darkinput" name="address" placeholder="Address">
-                            <input type="text" class="form-control darkinput " name="email" placeholder=" E-mail">
-                            </ul>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-outline-secondary my-2 my-sm-0" data-dismiss="modal">Close</button>
-                                <button type="submit" onClick="window.location.reload()" class="btn btn-outline-success my-2 my-sm-0">Submit</button>
-                            </div>
-                        </div>
-                        
-                    </form>
-                </div>
-                
-            </div>
-        </div>
-    </div>
     
     <!-- JS code -->
   
@@ -79,55 +40,29 @@
 
     <div class="container-fluid">
         <div class="row">
-
+            
             <table class="table table-inverse tablestyle">
-                <button type="button" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#myModal">
-                  +  Add Customer
-                </button>
-                
-            <tr>
-                <th style="padding: 10px;">
-                    <h5 style="text-align:center;">ID</h5>
-                </th>
-                <th style="padding: 10px;">
-                    <h5 style="text-align:center;">First name</h5>
-                </th>
-                <th style="padding: 10px;">
-                    <h5 style="text-align:center;">Last name</h5>
-                </th>
-                <th style="padding: 10px;">
-                    <h5 style="text-align: center;">Gender </h5>
-                </th>
-                <th style="padding: 10px;">
-                    <h5 style="text-align:center;">Address</h5>
-                </th>
-                <th style="padding: 10px;">
-                    <h5 style="text-align:center;">Favourite Genre</h5>
-                </th>
+                <tr>
+                    <th style="padding: 10px;">
+                        <h5 style="text-align:center;">Image</h5>
+                    </th>
+                    <th style="padding: 10px;">
+                        <h5 style="text-align:center;">Title</h5>
+                    </th>
+                    <th style="padding: 10px;">
+                        <h5 style="text-align:center;">Country</h5>
+                    </th>
+                    <th style="padding: 10px;">
+                        <h5 style="text-align: center;">Language</h5>
+                    </th>
+                    <th style="padding: 10px;">
+                        <h5 style="text-align:center;">Description</h5>
+                    </th>
+                    <th style="padding: 10px;">
+                        <h5 style="text-align:center;"></h5>
+                    </th>
                 </tr>
-                <th>
-                    <p></p>
-
-                </th>
-                <th>
-                    <p></p>
-
-                </th>
-                <th>
-                    <p></p>
-                </th>
-                <th>
-                    <p></p>
-                </th>
-                <th>
-                    <p></p>
-                </th>
-                <th>
-                    <p></p>
-                </th>
-
             </table>
-
         </div>
     </div>
 

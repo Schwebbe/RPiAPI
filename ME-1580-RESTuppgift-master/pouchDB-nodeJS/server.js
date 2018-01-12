@@ -8,13 +8,14 @@ var pouchDB = require('pouchdb');
 
 
 var hej = require('./custom_modules/module1.js');
+var Data = require('./custom_modules/module2.js');
 //Här skapas en lokal databas variabel
-var database = new pouchDB("customers");
+var database = new pouchDB("tvshows");
 //Här skickas krypterad data till couchDB databasen
-var remoteCouch = new pouchDB("http://localhost:5984/customers");
+var remoteCouch = new pouchDB("http://localhost:5984/tvshows");
+hej();
 
-
-
+Data();
 
 
 //Här synkas data som har skickats in till couchDB
@@ -46,7 +47,7 @@ app.get('/', function (req, res) {
 
 });
 //Kör alla databas variabler och inkludera alla dokument som ska vara = sant
-app.get("/customers", function (req, res) {
+app.get("/tvshows", function (req, res) {
     database.allDocs({
         include_docs: true
     }).then(function (result) {
@@ -58,15 +59,13 @@ app.get("/customers", function (req, res) {
     });
 });
 //Här postas ny data till routen customers och svarar med resultatet från databasen
-app.post("/customers", function (req, res) {
+app.post("/tvshows", function (req, res) {
     database.post(req.body).then(function (result) {
-        //Detta kommando gör så att när post requesten skickas itll servern, so respondar den med
-        //att refresha sidan via detta direktiv som anges
-        res.sendFile((path.join(__dirname, '/public/index.html')));
+        res.redirect("back");
     });
 });
 //Här tas data bort från customers och returnerar resultaten från databasen 
-app.delete("/customers/:id", function (req, res) {
+app.delete("/tvshows/:id", function (req, res) {
     database.get(req.params.id).then(function (result) {
         return database.remove(result);
     }).then(function (result) {
@@ -75,7 +74,7 @@ app.delete("/customers/:id", function (req, res) {
 });
 
 //Här uppdateras customers kolumnen och returnerar nya ändringar som har gjorts
-app.put("/customers/:id", function (req, res) {
+app.put("/tvshows/:id", function (req, res) {
     database.get(req.body.id).then(function (result) {
         result.firstname = req.body.firstname;
         result.lastname = req.body.lastname;
@@ -87,7 +86,7 @@ app.put("/customers/:id", function (req, res) {
     });
 });
 
-console.log(hej());
+
 app.listen(3000, function (error) {
     if (!error) {
         console.log('Server is running on port 3000');

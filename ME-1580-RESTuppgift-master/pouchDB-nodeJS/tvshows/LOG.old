@@ -1,0 +1,5 @@
+2018/01/12-21:45:09.087 30cc Recovering log #267
+2018/01/12-21:45:09.087 30cc Level-0 table #270: started
+2018/01/12-21:45:09.095 30cc Level-0 table #270: 237 bytes OK
+2018/01/12-21:45:09.105 30cc Delete type=0 #267
+2018/01/12-21:45:09.105 30cc Delete type=3 #265
