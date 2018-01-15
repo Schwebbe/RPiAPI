@@ -17,6 +17,15 @@ hej();
 
 Data();
 
+// Allow CORS(Cross Origin Resource Sharing). Decides who gets to access your server and what they are able to do.
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods", "*, DELETE");
+    next();
+});
+
+
 
 //Här synkas data som har skickats in till couchDB
 sync();

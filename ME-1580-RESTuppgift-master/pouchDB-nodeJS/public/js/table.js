@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     var APIUrl = "https://api.themoviedb.org/3/tv/top_rated?api_key=18034db0bd94fb6a1142260458e1d879&language=en-US&page=1";
-    var dbUrl = "http://localhost:3000/tvshows";
+    var dbUrl = "http://192.168.48.241:3000/tvshows";
     var APIDataExists = false;
     var DBDataExists = false;
     //Getting json data from API, this one shows the top rated tv series
@@ -70,7 +70,7 @@ $(document).ready(function () {
                 //Ajax delete funktion, HTML har bara post och get
                 $.ajax({
                     type: 'DELETE',
-                    url: 'http://localhost:3000/tvshows/' + text
+                    url: 'http://192.168.48.241:3000/tvshows/' + text
                 });
                 window.location.reload();
             });
