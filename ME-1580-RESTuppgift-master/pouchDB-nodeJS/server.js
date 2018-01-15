@@ -25,27 +25,13 @@ function sync() {
     database.replicate.to(remoteCouch, opts);
     database.replicate.from(remoteCouch, opts);
 } 
-//Här letar och ansluter filer till servern efter detta direktivet
-app.use(express.static(path.join(__dirname, 'public')));
 //Här används en json-tolkare
 app.use(bodyParser.json());
 //Man skapar en urlencoded tolkare
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-//index route till servern
-app.get('/', function (req, res) {
-    if (!error) {
-        console.log('Loaded...');
-        res.send('index.html');
-    } else {
-        return res.status(400).send({
-            "status": "error",
-            "message": "An `id` is required"
-        });
-    }
 
-});
 //Kör alla databas variabler och inkludera alla dokument som ska vara = sant
 app.get("/tvshows", function (req, res) {
     database.allDocs({
@@ -74,18 +60,16 @@ app.delete("/tvshows/:id", function (req, res) {
 });
 
 //Här uppdateras tvshows kolumnen och returnerar nya ändringar som har gjorts
-app.put("/tvshows/:id", function (req, res) {
+
+
+/*app.put("/tvshows/:id", function (req, res) {
     database.get(req.body.id).then(function (result) {
-        result.firstname = req.body.firstname;
-        result.lastname = req.body.lastname;
-        result.Gender = req.body.Gender;
-        result.address = req.body.address;
-        result.email = req.body.email;
+    
         database.put(result);
         res.send(result);
     });
 });
-
+*/
 
 app.listen(3000, function (error) {
     if (!error) {
