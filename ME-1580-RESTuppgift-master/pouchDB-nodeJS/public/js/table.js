@@ -4,8 +4,9 @@ $(document).ready(function () {
     var dbUrl = "http://localhost:3000/tvshows";
     var APIDataExists = false;
     var DBDataExists = false;
+    //Getting json data from API, this one shows the top rated tv series
     $.getJSON(APIUrl, function (data) {
-
+        //Slicing list of objects and showing 20 results
         var jsonSliced = data.results.slice(0, 20);
 
         var tr;
@@ -38,6 +39,7 @@ $(document).ready(function () {
 
         };
     });
+    //Getting json data from local DB
     $.getJSON(dbUrl, function (data) {
         var tr;
         for (var i = 0; i < data.length; i++) {

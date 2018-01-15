@@ -58,13 +58,13 @@ app.get("/tvshows", function (req, res) {
         res.status(400).send(error);
     });
 });
-//Här postas ny data till routen customers och svarar med resultatet från databasen
+//Här postas ny data till routen tvshows och svarar med resultatet från databasen
 app.post("/tvshows", function (req, res) {
     database.post(req.body).then(function (result) {
         res.redirect("back");
     });
 });
-//Här tas data bort från customers och returnerar resultaten från databasen 
+//Här tas data bort från tvshows och returnerar resultaten från databasen 
 app.delete("/tvshows/:id", function (req, res) {
     database.get(req.params.id).then(function (result) {
         return database.remove(result);
@@ -73,7 +73,7 @@ app.delete("/tvshows/:id", function (req, res) {
     });
 });
 
-//Här uppdateras customers kolumnen och returnerar nya ändringar som har gjorts
+//Här uppdateras tvshows kolumnen och returnerar nya ändringar som har gjorts
 app.put("/tvshows/:id", function (req, res) {
     database.get(req.body.id).then(function (result) {
         result.firstname = req.body.firstname;
