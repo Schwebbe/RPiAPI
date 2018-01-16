@@ -6,7 +6,7 @@ var error = Error('error');
 var bodyParser = require('body-parser');
 var pouchDB = require('pouchdb');
 
-
+//custom moduler
 var hej = require('./custom_modules/module1.js');
 var Data = require('./custom_modules/module2.js');
 //Här skapas en lokal databas variabel
