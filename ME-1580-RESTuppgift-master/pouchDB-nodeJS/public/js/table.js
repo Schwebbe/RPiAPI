@@ -59,7 +59,7 @@ $(document).ready(function () {
             tr.append("<td class='centertxt'>" + country + "</td>");
             tr.append("<td class='centertxt'>" + language + "</td>");
             tr.append("<td class='centertxt'>" + description + "</td>");
-            tr.append("<button type='button' onclick='console.log("title + ' has been deleted from database!'")' class='del btn btn-outline-danger my-2 my-sm-0'><td>" + "Delete" + "</td></button>");
+            tr.append("<button type='button' class='del btn btn-outline-danger my-2 my-sm-0'><td>" + "Delete" + "</td></button>");
 
             $(".table").append(tr);
             //Delete knapp för varje kolumn
