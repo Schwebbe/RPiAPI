@@ -114,7 +114,7 @@ $(document).ready(function () {
 
     function DataBaseTableCheck() {
         //Checks if table rows is more than 1.
-        if ($(".table tr").length > 1) {
+        if ($(".dataCollapse").length > 1) {
             //If rows is more than 1, make boolean true.
             DBDataExists = true;
         };
