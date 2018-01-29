@@ -53,15 +53,20 @@ $(document).ready(function () {
             var description = data[i].description;
 
             tr = $('<tr/>');
+       /*     tr.append('<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">' + "Button with data-target" + '</button>');
+            tr.append("<div class='collapse' id='collapseExample'> " + 
+                      + " <div class='card card-body'>" + " Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident." + "</div>" + 
+                      "</div>"
+                     ); */
             tr.append("<td style='display: none;' class='id centertxt'>" + id + "</td>");
-            tr.append("<td class='centertxt'><img src='http://image.tmdb.org/t/p/w185//" + poster_path + "'></td>");
+            tr.append("<td class='centertxt'><img class='card-img-top' src='http://image.tmdb.org/t/p/w185//" + poster_path + "'></td>");
             tr.append("<td class='centertxt'>" + title + "</td>");
             tr.append("<td class='centertxt'>" + country + "</td>");
             tr.append("<td class='centertxt'>" + language + "</td>");
             tr.append("<td class='centertxt'>" + description + "</td>");
             tr.append("<button type='button' class='del btn btn-outline-danger my-2 my-sm-0'><td>" + "Delete" + "</td></button>");
-
-            $(".table").append(tr);
+            //looping appending data in a certain class
+            $(".dataCollapse").append(tr);
             //Delete knapp för varje kolumn
             $('.del').click(function () {
                 // Pull out ID.
